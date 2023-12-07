@@ -160,10 +160,10 @@ C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\bin\Newto
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\bin\Antlr3.Runtime.pdb
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.csproj.AssemblyReference.cache
+C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.Migrations.InitialCreate.resources
+C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.Migrations.AnimeDBV1.resources
+C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.csproj.GenerateResource.cache
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.csproj.CoreCompileInputs.cache
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.csproj.CopyComplete
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.dll
 C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.pdb
-C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.Migrations.InitialCreate.resources
-C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.csproj.GenerateResource.cache
-C:\Users\Prashant Shrestha\Documents\Projects\MyPersonal\EFTest\EFTest\obj\Debug\EFTest.Migrations.AnimeDBV1.resources
