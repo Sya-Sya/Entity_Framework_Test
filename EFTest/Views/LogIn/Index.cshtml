@@ -1,0 +1,45 @@
+﻿@model EFTest.Models.UserModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LogInLayout.cshtml";
+}
+
+<div class="split-container">
+    <!-- gallery split -->
+    <div class="gallery">
+        <div>
+            <img src="~/Content/assets/image/toji.jpg" alt="Bg_Image" class="img" />
+            <div class="overlay-text">
+                <p>Welcome to LogIn NERDS</p>
+            </div>
+        </div>
+        <div class="overlay-text-bottom">
+            <p>&copy; @DateTime.Now.Year - SHINIGAMI</p>
+        </div>
+    </div>
+    <!-- gallery split END-->
+    @using (Html.BeginForm("Index", "LogIn", FormMethod.Post))
+    {
+        <div class="NerdLog">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group-local">
+                            <input type="text" class="form-control-local txt-color" id="username" name="Username">
+                            <label for="username" class="form-label-local">Username</label>
+                            @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+                        </div>
+                        <br />
+                        <div class="form-group-local">
+                            <input type="password" class="form-control-local txt-color" id="password" name="Password">
+                            <label for="password" class="form-label-local">Password</label>
+                            @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                        </div>
+                        <br />
+                        <button type="submit" class="bn5 alRight">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
