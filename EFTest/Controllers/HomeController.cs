@@ -1,5 +1,6 @@
 ﻿using EFTest.API;
 using EFTest.Database;
+using EFTest.Helpers;
 using EFTest.Models;
 using EFTest.Models.API_Model;
 using System;
@@ -12,14 +13,12 @@ namespace EFTest.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ServiceAPI _api;
-        public HomeController(ServiceAPI sapi)
+        public ActionResult Index(MainMangaModel model)
         {
-            _api = sapi;
-        }
-        public ActionResult Index()
-        {
-            return View();
+            ServiceAPI _api = new ServiceAPI();
+            var getList = _api.top10manga("0", "10");
+            model.Top10MangaList = getList.data.MapObjects<MangaModel>();
+            return View(model);
         }
 
         public ActionResult About()
@@ -38,11 +37,16 @@ namespace EFTest.Controllers
             }
             return View();
         }
+
         [HttpGet]
-        public ActionResult Top10Manga(MangaModel model)
+        public ActionResult Top10Manga(MainMangaModel model)
         {
+            ServiceAPI _api = new ServiceAPI();
             var getList = _api.top10manga("0","10");
-            return View(getList);
+            var getRandomManga = _api.getrandomMange();
+            model.Top10MangaList = getList.data.MapObjects<MangaModel>();
+            model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
+            return View(model);
         }
     }
 }
