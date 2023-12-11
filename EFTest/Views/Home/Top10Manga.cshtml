@@ -1,0 +1,24 @@
+﻿@model EFTest.Models.API_Model.MangaModel
+@{
+    ViewBag.Title = "Top10Manga";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Right ma List</p>
+
+<div class="list-right-m">
+    <h2>Top 10 Manga</h2>
+    <div class="container-right-m">
+       
+        <div class="mangaImg">
+            @*<img src="~/Content/assets/image/dbz.png" alt="Bg_Image" />*@ @*CoverImage*@
+            <img src="https://img.mreadercdn.com/_m/500x800/100/d7/48/d748abbcf8d90cc92f61daf947bd9439/d748abbcf8d90cc92f61daf947bd9439.jpg" alt="Bg_Image" /> @*CoverImage*@
+        </div>
+        <div class="text">
+            <h2>Jujutsu Kaisen</h2> @*Title*@
+            <p>Description:</p><p>Hidden in plain sight, an age-old conflict rages on. Supernatural monsters known as \"Curses\" terrorize humanity from the shadows, and powerful humans known as \"Jujutsu\" sorcerers use mystical arts to...</p> @*Description*@
+            <p>Chapters:</p><p>244</p> @*Chapters*@
+            <p>Genres:</p><p>Action,Demons,Fantasy,Shounen,Supernatural</p> @*Genres*@
+        </div>
+    </div>
+</div>
