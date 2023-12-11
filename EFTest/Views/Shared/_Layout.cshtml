@@ -7,6 +7,7 @@
 
     @*custome local CSS*@
     <link rel="stylesheet" href="~/Content/assets/css/index.css">
+    <link rel="stylesheet" href="~/Content/assets/css/manga.css">
 
     <script src="https://kit.fontawesome.com/3df9cedb79.js" crossorigin="anonymous"></script>
 
@@ -53,7 +54,7 @@
                 </li>
                 <li style="display: flex; align-items: center;">
                     <i class="fab fa-hotjar" style="margin-right: 5px; color: #ffffff;"></i>
-                    @Html.ActionLink("Hot Manga", "About", "Home", new { area = "" }, new { @class = "nav-link myCenter" })
+                    @Html.ActionLink("Hot Manga", "Top10Manga", "Home", new { area = "" }, new { @class = "nav-link myCenter" })
                 </li>
                 <li style="display: flex; align-items: center;">
                     <i class="fas fa-user-alt" style="margin-right: 5px; color: #ffffff;"></i>

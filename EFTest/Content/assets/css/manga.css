@@ -1,0 +1,26 @@
+﻿.list-right-m{
+    position:absolute;
+    left:1616px;
+}
+
+.mangaImg {
+    width: 100px; /* Set the width of your container */
+    height: 140px; /* Set the height of your container */
+    overflow: hidden; /* Hide the overflowing parts of the image */
+}
+
+    .mangaImg img {
+        width: 100%; /* Make the image take the full width of the container */
+        height: 100%; /* Make the image take the full height of the container */
+        object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
+    }
+
+
+.container-right-m {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    flex: 2; /* Takes 2/3 of the available space */
+}

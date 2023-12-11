@@ -13,4 +13,12 @@ namespace EFTest
         public string ActionIP { get; set; }
         public string UpdatedIP { get; set; }
     }
+
+    public class CommonAPIResponseModel
+    {
+        public string status { get; set; }
+        public object data { get; set; }
+        public string code { get; set; }
+        public string message { get; set; }
+    }
 }
