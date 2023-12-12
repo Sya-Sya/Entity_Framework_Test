@@ -1,0 +1,135 @@
+﻿@model EFTest.Models.API_Model.MainMangaModel
+
+@{
+    ViewBag.Title = "Get Manga";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main_content">
+    <div class="info">
+        <ul class="cards-local">
+            <li class="cards_item">
+                <div class="card-local">
+                    <div class="ImageBase">
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.cover))
+                        {
+                            <img src="@Model.RandomManga.cover" alt="">
+                        }
+                        else
+                        {
+                            <img src="~/Content/assets/image/Myamoto_Apologize.jpg" alt="">
+                        }
+                    </div>
+                    <div class="card-content">
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.title) || !string.IsNullOrEmpty(@Model.RandomManga.alt_title))
+                        {
+                            <h2>
+                                @Model.RandomManga.title (@Model.RandomManga.alt_title)
+                            </h2>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.type))
+                        {
+                            <p>Type : @Model.RandomManga.type</p>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.status))
+                        {
+                            <p>Status : @Model.RandomManga.status</p>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.published))
+                        {
+                            <p>Published : @Model.RandomManga.published</p>
+                        }
+                        <p>Score : @Model.RandomManga.score</p>
+                        <p>Views : @Model.RandomManga.views</p>
+                        @if ((@Model.RandomManga.authers != null) && (!@Model.RandomManga.authers.Any()))
+                        {
+                            <p>
+                                Authors: @foreach (var z in @Model.RandomManga.authers)
+                                {
+                                    <text>@z</text>
+                                    if (z != Model.RandomManga.authers.Last())
+                                    {
+                                        <text>,</text>
+                                    }
+                                }
+                            </p>
+                        }
+                        @if ((@Model.RandomManga.mangazines != null) && (!@Model.RandomManga.mangazines.Any()))
+                        {
+                            <p>
+                                Mangazines : @foreach (var y in @Model.RandomManga.mangazines)
+                                {
+                                    <text>@y</text>
+                                    if (y != Model.RandomManga.mangazines.Last())
+                                    {
+                                        <text>,</text>
+                                    }
+                                }
+                            </p>
+                        }
+
+                        @if ((@Model.RandomManga.mangazines != null) && (!@Model.RandomManga.mangazines.Any()))
+                        {
+                            <p>
+                                Genres : @foreach (var x in @Model.RandomManga.genres)
+                                {
+                                    <text>@x</text>
+                                    if (x != Model.RandomManga.genres.Last())
+                                    {
+                                        <text>,</text>
+                                    }
+                                }
+                            </p>
+                        }
+                        @if ((@Model.RandomManga.mangazines != null) && (!@Model.RandomManga.mangazines.Any()))
+                        {
+                            <p>
+                                Chapters :
+                                @foreach (var item in @Model.RandomManga.chapters)
+                                {
+                                    <text>@item.lang</text>
+                                    <text>@item.total</text>
+                                    if (item != Model.RandomManga.chapters.Last())
+                                    {
+                                        <text>,</text>
+                                    }
+                                }
+                            </p>
+                        }
+                        @if ((@Model.RandomManga.mangazines != null) && (!@Model.RandomManga.mangazines.Any()))
+                        {
+                            <p>
+                                Volumes :
+                                @foreach (var item in @Model.RandomManga.volumes)
+                                {
+                                    <text>@item.lang</text>
+                                    <text>@item.total</text>
+                                    if (item != Model.RandomManga.volumes.Last())
+                                    {
+                                        <text>,</text>
+                                    }
+                                }
+                            </p>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.RandomManga.synopsis) || !string.IsNullOrEmpty(@Model.RandomManga.synopsis))
+                        {
+                            <p>
+                                <div>
+                                    @Model.RandomManga.synopsis
+                                </div>
+                            </p>
+                        }
+                        <a href="@Url.Action("GetManga","Home", new { MangaSlug = @Model.RandomManga.slug})" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
