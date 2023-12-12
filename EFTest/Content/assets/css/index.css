@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import "compass/css3";
 
 * {
     margin: 0;
@@ -10,7 +11,7 @@
 }
 
 body {
-    background-color: #f3f5f9;
+    background-color: #313338 !important;
 }
 
 /*nav Bar*/
@@ -85,9 +86,9 @@ body {
                 border-top-right-radius: 5px;
             }
 
-/*    .wrapper .main_content {
-        width: 100%;
-        margin-left: 200px;
+    .wrapper .main_content {
+        /*width: 100%;*/
+        margin-left: 260px;
     }
 
         .wrapper .main_content .info {
@@ -98,7 +99,7 @@ body {
 
             .wrapper .main_content .info div {
                 margin-bottom: 20px;
-            }*/
+            }
 
 @media (max-height: 500px) {
     .social_media {
@@ -143,17 +144,16 @@ body {
 /*header faded linear gradient*/
 
 .header {
-    width: 100%;
     height: 200px;
     padding: 20px;
-/*    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
-*/    color: #fff;
-    padding: 10px; /* Optional padding */
-
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    color: #fff;
     position: relative;
     text-align: center;
     overflow: hidden;
+    margin-left: 260px;
 }
+
     .header img {
         width: 100%; /* Make the image fill the container width */
         height: auto; /* Maintain the image's aspect ratio */
@@ -170,3 +170,205 @@ body {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
         filter: blur(3px); /* Adjust the blur effect as needed */
     }
+
+/*Card Design*/
+
+.cards-local {
+    /*    display: grid;*/
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cards_item {
+    display: flex;
+    padding: 1rem;
+}
+
+.card_image {
+    height: calc(13*1.2rem);
+    padding: 1.2rem 1.2rem 0;
+    position: relative;
+}
+
+    .card_image:before,
+    .card_image:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        left: 60%;
+        top: 0;
+        height: 45px;
+        background: #e6e6e6b8;
+        transform: rotate(45deg);
+    }
+
+    .card_image:after {
+        transform: rotate(-45deg);
+        top: auto;
+        bottom: -22px;
+        left: 40%;
+    }
+
+    .card_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.cards_item {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+}
+
+
+.card-local {
+    background-color: white;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-left: 30px;
+    background: repeating-linear-gradient(#5e383800 0 calc(1.2rem - 1px),#646464 0 1.2rem) right bottom /100% 100%,linear-gradient(#ffffff 0 0) 30px 0/2px 100% #3a3a3a;
+    background-repeat: no-repeat;
+    line-height: 1.2rem;
+    -webkit-mask: radial-gradient(circle .8rem at 2px 50%,#0000 98%,#000)0 0/100% 2.4rem;
+    height: 700px;
+}
+
+.card_content {
+    padding: 1.2rem;
+}
+
+h2.card_title, p {
+    margin: 1.2rem 0;
+}
+
+h2.card_title {
+    font-size: 1.3em;
+}
+
+body {
+    font-family: monospace;
+    background: #eee;
+}
+
+html {
+    font-size: 15px;
+}
+
+/*BaseRandom*/
+.ImageBase {
+    width: 18%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    .ImageBase img {
+        position: relative;
+        top: 20px;
+        left: 1200px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        object-fit: cover;
+    }
+
+/*Card*/
+.card-content {
+    position: relative;
+    top: -416px;
+    width: 70%;
+    left: 20px;
+    color: #dfae3cc7;
+}
+
+/*Search Box*/
+
+.search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -54px;
+    width: 600px;
+}
+
+svg {
+    position: absolute;
+    transform: translateX(-246px);
+    width: 600px;
+    height: auto;
+    stroke-width: 8px;
+    stroke: #b3c33a;
+    stroke-width: 1px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 64.6 206.305;
+    transition: all 0.5s ease-in-out;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.input-search {
+    position: absolute;
+    width: calc(100% - 148px);
+    height: 64px;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    left: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.search-label {
+    position: absolute;
+    display: block;
+    width: 108px;
+    height: 108px;
+    top: 0;
+    left: 50%;
+    margin-left: -54px;
+    z-index: 100;
+    transition: $0.5s ease-in-out;
+}
+
+
+.full, .search-label{
+    transform: translateX(246px);
+}
+
+svg {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 64.6 206.305;
+    transform: translateX(0);
+}
+
+/*.isActive, .search-label{
+    transform: translateX(246px);
+}
+
+svg {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 141.305 66;
+    transform: translateX(0);
+}
+
+&.full svg {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 141.305 66;
+    transform: translateX(0);
+}*/
+.isActive .search-label {
+    transform: translateX(246px);
+}
+
+.isActive svg,
+.isActive.full svg {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 141.305 66;
+    transform: translateX(0);
+}

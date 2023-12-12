@@ -13,11 +13,16 @@ namespace EFTest.Controllers
 {
     public class HomeController : Controller
     {
+        private ServiceAPI _api;
+        public HomeController()
+        {
+            _api = new ServiceAPI();
+        }
+        //ServiceAPI _api = new ServiceAPI();
         public ActionResult Index(MainMangaModel model)
         {
-            ServiceAPI _api = new ServiceAPI();
-            var getList = _api.top10manga("0", "10");
-            model.Top10MangaList = getList.data.MapObjects<MangaModel>();
+            var getRandomManga = _api.getrandomMange();
+            model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
             return View(model);
         }
 
@@ -41,11 +46,28 @@ namespace EFTest.Controllers
         [HttpGet]
         public ActionResult Top10Manga(MainMangaModel model)
         {
-            ServiceAPI _api = new ServiceAPI();
             var getList = _api.top10manga("0","10");
             var getRandomManga = _api.getrandomMange();
             model.Top10MangaList = getList.data.MapObjects<MangaModel>();
             model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult GetManga(string MangaSlug)
+        {
+            MainMangaModel model = new MainMangaModel();
+            var getClickedManga = _api.getSpeceficMange(MangaSlug);
+            model.RandomManga = getClickedManga.data.MapObject<RandomMangaModel>();
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult SearchManga(string MangaName)
+        {
+            MainMangaModel model = new MainMangaModel();
+            var getClickedManga = _api.GetSearchedManga(MangaName);
+            model.RandomManga = getClickedManga.data.MapObject<RandomMangaModel>();
             return View(model);
         }
     }

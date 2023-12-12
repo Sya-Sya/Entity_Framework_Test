@@ -70,6 +70,11 @@
                     <i class="fas fa-question" style="margin-right: 5px; color: #ffffff;"></i>
                     @Html.ActionLink("FAQ", "Contact", "Home", new { area = "" }, new { @class = "nav-link myCenter" })
                 </li>
+                <li style="display: flex; align-items: center;">
+                    <i class="fas fa-search" style="margin-right: 5px; color: #ffffff;"></i>
+                    <button class="searchBox nav-link myCenter" onclick="myShowSearch()">Search</button>
+                    @*@Html.ActionLink("Search", "#", "#", new { area = "" }, new { @class = "nav-link myCenter searchBox", @onclick = "myShowSearch()" })*@
+                </li>
             </ul>
             <div class="kawaiImg">
                 <div>
@@ -85,9 +90,20 @@
                 <p>&copy; @DateTime.Now.Year - SHINIGAMI</p>
             </div>
         </div>
-    </div>
-    <div class="container">
-        @RenderBody()
+        <div>
+            @RenderBody()
+        </div>
+        <div>
+            <div class="search">
+                <svg version="1.1" viewBox="0 0 142.358 24.582">
+                    <path id="search-path" fill="none" d="M131.597,14.529c-1.487,1.487-3.542,2.407-5.811,2.407
+        c-4.539,0-8.218-3.679-8.218-8.218s3.679-8.218,8.218-8.218c4.539,0,8.218,3.679,8.218,8.218
+        C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0" />
+                </svg>
+                <label for="search" class="search-label"></label>
+                <input type="search" id="search" autocomplete="off" class="input-search" />
+            </div>
+        </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -114,3 +130,31 @@
     <script type="text/javascript" language="javascript" src="https://opensource.propeller.in/components/button/js/ripple-effect.js"></script>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+       $(".search").hide();
+        console.log("I am Hidden!");
+    });
+    function myShowSearch() {
+        debugger;
+        $(".search").show();
+        var searchField = $('.search');
+        var searchInput = $("input[type='search']");
+
+        var checkSearch = function () {
+            var contents = searchInput.val();
+            if (contents.length !== 0) {
+                searchField.addClass('full');
+            } else {
+                searchField.removeClass('full');
+            }
+        };
+
+        $("input[type='search']").focus(function () {
+            searchField.addClass('isActive');
+        }).blur(function () {
+            searchField.removeClass('isActive');
+            checkSearch();
+        });
+    }
+</script>
