@@ -347,21 +347,6 @@ svg {
     transform: translateX(0);
 }
 
-/*.isActive, .search-label{
-    transform: translateX(246px);
-}
-
-svg {
-    stroke-dashoffset: -65;
-    stroke-dasharray: 141.305 66;
-    transform: translateX(0);
-}
-
-&.full svg {
-    stroke-dashoffset: -65;
-    stroke-dasharray: 141.305 66;
-    transform: translateX(0);
-}*/
 .isActive .search-label {
     transform: translateX(246px);
 }
@@ -371,4 +356,12 @@ svg {
     stroke-dashoffset: -65;
     stroke-dasharray: 141.305 66;
     transform: translateX(0);
+}
+
+/*Cancel*/
+.cancel {
+    position: absolute;
+    top: -390px;
+    left: 800px;
+    background-color: white;
 }
