@@ -211,6 +211,7 @@
     <Content Include="Views\Shared\_LogInLayout.cshtml" />
     <Content Include="Views\Home\Top10Manga.cshtml" />
     <Content Include="Views\Home\GetManga.cshtml" />
+    <Content Include="Views\Home\SearchManga.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

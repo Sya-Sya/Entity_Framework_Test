@@ -18,7 +18,6 @@ namespace EFTest.Controllers
         {
             _api = new ServiceAPI();
         }
-        //ServiceAPI _api = new ServiceAPI();
         public ActionResult Index(MainMangaModel model)
         {
             var getRandomManga = _api.getrandomMange();
@@ -62,7 +61,7 @@ namespace EFTest.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult SearchManga(string MangaName)
         {
             MainMangaModel model = new MainMangaModel();
