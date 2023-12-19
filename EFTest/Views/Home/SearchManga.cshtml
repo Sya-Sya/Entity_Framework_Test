@@ -6,11 +6,17 @@
 }
 
 <main>
-    <a href="https://google.com" class="card-search">
-        <img src="~/Content/assets/image/toji.jpg" alt="Bg_Image" class="img" />
-        <div class="inner-search">
-            <h2 class="title-search">Mit 117 Sachen durch Klugheimschen Basaltgebirge</h2>
-            <time class="subtitle">03. März 2021</time>
-        </div>
-    </a>
+    @foreach (var z in Model.SearchedMangaList)
+    {
+        <a href="@z.slug" class="card-search">
+            <img src="@z.cover" alt="Searched_Image" class="img" />
+            <div class="inner-search">
+                <h2 class="title-search">@z.title</h2>
+                <div class="subtitle">
+                    <p>Total : @z.chapters.total</p>
+                    <p>Language : @z.chapters.lang</p>
+                </div>
+            </div>
+        </a>
+    }
 </main>

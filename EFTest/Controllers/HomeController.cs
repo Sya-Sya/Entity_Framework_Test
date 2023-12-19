@@ -66,7 +66,7 @@ namespace EFTest.Controllers
         {
             MainMangaModel model = new MainMangaModel();
             var getClickedManga = _api.GetSearchedManga(MangaName);
-            model.RandomManga = getClickedManga.data.MapObject<RandomMangaModel>();
+            model.SearchedMangaList = getClickedManga.data.MapObjects<SearchedManga>();
             return View(model);
         }
     }
