@@ -194,15 +194,15 @@ body {
     color: white;
 }
 
-.overlay-text-bottom {
+/*.overlay-text-bottom {
     position: absolute;
     bottom: -445px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    z-index: 1; /* Place the overlay text in front of the image */
-    color: #4d4020 !important;
-}
+    z-index: 1;*/ /* Place the overlay text in front of the image */
+    /*color: #4d4020 !important;
+}*/
 
 /* END OF GALLERY GROUP */
 
