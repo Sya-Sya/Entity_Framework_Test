@@ -18,16 +18,18 @@ namespace EFTest.Controllers
         {
             _api = new ServiceAPI();
         }
+
         public ActionResult Index(MainMangaModel model)
         {
-            var getRandomManga = _api.getrandomMange();
-            model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
+            //var getRandomManga = _api.getrandomMange();
+            //model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
             return View(model);
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            //EF wala part
             using (var test = new EFDB())
             {
                 var myAnimeInsert = new AniList()
@@ -42,10 +44,11 @@ namespace EFTest.Controllers
             return View();
         }
 
+        #region Manga Region (API not Working)
         [HttpGet]
         public ActionResult Top10Manga(MainMangaModel model)
         {
-            var getList = _api.top10manga("0","10");
+            var getList = _api.top10manga("0", "10");
             var getRandomManga = _api.getrandomMange();
             model.Top10MangaList = getList.data.MapObjects<MangaModel>();
             model.RandomManga = getRandomManga.data.MapObject<RandomMangaModel>();
@@ -69,5 +72,6 @@ namespace EFTest.Controllers
             model.SearchedMangaList = getClickedManga.data.MapObjects<SearchedManga>();
             return View(model);
         }
+        #endregion
     }
 }

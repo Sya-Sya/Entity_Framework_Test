@@ -8,14 +8,14 @@
     <!-- gallery split -->
     <div class="gallery">
         <div>
-            <img src="~/Content/assets/image/toji.jpg" alt="Bg_Image" class="img" />
+            <img src="@*~/Content/assets/image/toji.jpg*@" alt="Bg_Image" class="img" />
             <div class="overlay-text">
-                <p>Welcome to LogIn NERDS</p>
+                <p>Welcome to Soul Society</p>
             </div>
         </div>
-        <div class="overlay-text-bottom">
-            <p>&copy; @DateTime.Now.Year - SHINIGAMI</p>
-        </div>
+        @*<div class="overlay-text-bottom">
+                <p>&copy; @DateTime.Now.Year - SHINIGAMI</p>
+            </div>*@
     </div>
     <!-- gallery split END-->
     @using (Html.BeginForm("Index", "LogIn", FormMethod.Post))
@@ -40,6 +40,7 @@
                     </div>
                 </div>
             </div>
+            <a href="@Url.Action("ForgotPassword","LogIn")">Forgot Password?</a>
         </div>
     }
 </div>
