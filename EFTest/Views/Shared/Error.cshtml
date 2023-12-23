@@ -3,11 +3,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Error</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 </head>
 <body>
     <hgroup>
         <h1>Error.</h1>
         <h2>An error occurred while processing your request.</h2>
     </hgroup>
+    <a id='linkButton'>ClickMe</a>
+
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        toastr.options.timeOut = 1500; // 1.5s
+        toastr.info('Page Loaded!');
+        $('#linkButton').click(function () {
+            toastr.success('Click Button');
+        });
+    });
+</script>

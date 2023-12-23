@@ -74,6 +74,7 @@
                     <i class="fas fa-search" style="margin-right: 5px; color: #ffffff;"></i>
                     <button class="searchBox nav-link myCenter" onclick="myShowSearch()">Search</button>
                     @*@Html.ActionLink("Search", "#", "#", new { area = "" }, new { @class = "nav-link myCenter searchBox", @onclick = "myShowSearch()" })*@
+                    <a id='linkButton'>ClickMe</a>
                 </li>
             </ul>
             <div class="kawaiImg">
@@ -134,6 +135,15 @@
     <script type="text/javascript" language="javascript" src="https://opensource.propeller.in/components/button/js/ripple-effect.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+      $(document).ready(function() {
+        toastr.options.timeOut = 1500; // 1.5s
+        toastr.success('OILCUM');
+        $('#linkButton').click(function() {
+           toastr.info('Click Button');
+        });
+      });
+    </script>
 <script>
     $(document).ready(function () {
         $(".search").hide();

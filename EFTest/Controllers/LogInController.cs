@@ -16,11 +16,25 @@ namespace EFTest.Controllers
         [HttpPost]
         public ActionResult Index(UserModel model)
         {
+            ModelState.Remove("Email");
+            ModelState.Remove("MobileNumber");
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+        #endregion
+
+        #region Register
+        [HttpPost]
+        public ActionResult Register(UserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "LogIn");
+            }
+            return RedirectToAction("Index", "LogIn");
         }
         #endregion
 
@@ -35,7 +49,7 @@ namespace EFTest.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("SendOTP","LogIn");
+                return RedirectToAction("SendOTP", "LogIn");
             }
             return View();
         }
