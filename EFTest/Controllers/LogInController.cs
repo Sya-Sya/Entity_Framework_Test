@@ -14,7 +14,7 @@ namespace EFTest.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(UserModel model)
+        public ActionResult Index(ForgotPassword model)
         {
             ModelState.Remove("Email");
             ModelState.Remove("MobileNumber");
@@ -28,7 +28,7 @@ namespace EFTest.Controllers
 
         #region Register
         [HttpPost]
-        public ActionResult Register(UserModel model)
+        public ActionResult Register(ForgotPassword model)
         {
             if (ModelState.IsValid)
             {

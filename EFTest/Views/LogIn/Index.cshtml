@@ -1,4 +1,4 @@
-﻿@model EFTest.Models.UserModel
+﻿@model EFTest.Models.ForgotPassword
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LogInLayout.cshtml";
@@ -26,13 +26,13 @@
                             <div class="form-group-local">
                                 <input type="text" class="form-control-local txt-color" id="username" name="Username">
                                 <label for="username" class="form-label-local">Username</label>
-                                @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
                             </div>
                             <br />
                             <div class="form-group-local">
                                 <input type="password" class="form-control-local txt-color" id="password" name="Password">
                                 <label for="password" class="form-label-local">Password</label>
-                                @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
                             </div>
                             <br />
                             <button type="submit" class="bn5 alRight">Log In</button>
@@ -46,7 +46,7 @@
                             <div class="flex-items-top form-group-local">
                                 <input type="text" class="form-control-local txt-color" id="username" name="Username">
                                 <label for="Username" class="form-label-local">Username</label>
-                                @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
                             </div>
                             <div class="flex-items-top form-group-local">
                                 <input type="text" class="form-control-local txt-color" id="username" name="MobileNumber">
@@ -58,13 +58,13 @@
                             <div class="flex-items-bottom form-group-local">
                                 <input type="email" class="form-control-local txt-color" id="email" name="Email">
                                 <label for="Email" class="form-label-local">E-mail</label>
-                                @Html.ValidationMessageFor(x => x.Email, "", new { style = "color:#889b64;" })
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
                             </div>
                             <br />
                             <div class="flex-items-bottom form-group-local">
                                 <input type="password" class="form-control-local txt-color" id="password" name="Password">
                                 <label for="password" class="form-label-local">Password</label>
-                                @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
                             </div>
                             <button type="submit" class="bn5 alRight">Register</button>
                         </div>

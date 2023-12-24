@@ -147,9 +147,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AniList.cs" />
     <Compile Include="Models\API Model\MangaModel.cs" />
-    <Compile Include="Models\CommonGenericModel.cs" />
     <Compile Include="Models\ForgotPassword\ForgotPassword.cs" />
-    <Compile Include="Models\LogIn\LogInModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\LogIn\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />
@@ -260,12 +259,6 @@
     <EmbeddedResource Include="Migrations\202312070713568_AnimeDB-V1.resx">
       <DependentUpon>202312070713568_AnimeDB-V1.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SHINIGAMI.BUSINESS\SHINIGAMI.BUSINESS.csproj">
-      <Project>{00b6a72f-a223-4178-b2b4-e8c9b438fc80}</Project>
-      <Name>SHINIGAMI.BUSINESS</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
