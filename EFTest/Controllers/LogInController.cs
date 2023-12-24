@@ -47,6 +47,37 @@ namespace EFTest.Controllers
         [HttpPost]
         public ActionResult ForgotPassword(ForgotPassword model)
         {
+            ModelState.Remove("Email");
+            ModelState.Remove("MobileNumber");
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+        #endregion
+
+        #region Register
+        [HttpPost]
+        public ActionResult Register(UserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "LogIn");
+            }
+            return RedirectToAction("Index", "LogIn");
+        }
+        #endregion
+
+        #region Forgot Password
+        [HttpGet]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ForgotPassword(ForgotPassword model)
+        {
             if (ModelState.IsValid)
             {
                 return RedirectToAction("SendOTP", "LogIn");
