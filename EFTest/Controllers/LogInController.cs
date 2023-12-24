@@ -57,35 +57,6 @@ namespace EFTest.Controllers
         }
         #endregion
 
-        #region Register
-        [HttpPost]
-        public ActionResult Register(UserModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Index", "LogIn");
-            }
-            return RedirectToAction("Index", "LogIn");
-        }
-        #endregion
-
-        #region Forgot Password
-        [HttpGet]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult ForgotPassword(ForgotPassword model)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("SendOTP", "LogIn");
-            }
-            return View();
-        }
-        #endregion
-
         #region Send OTP
         [HttpGet]
         public ActionResult SendOTP()
