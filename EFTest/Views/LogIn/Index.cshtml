@@ -8,38 +8,98 @@
     <!-- gallery split -->
     <div class="gallery">
         <div>
-            <img src="~/Content/assets/image/toji.jpg" alt="Bg_Image" class="img" />
+            <img src="@*~/Content/assets/image/toji.jpg*@" alt="Bg_Image" class="img" />
             <div class="overlay-text">
-                <p>Welcome to LogIn NERDS</p>
+                <p>Welcome to Soul Society</p>
             </div>
         </div>
-        <div class="overlay-text-bottom">
-            <p>&copy; @DateTime.Now.Year - SHINIGAMI</p>
-        </div>
     </div>
+
     <!-- gallery split END-->
-    @using (Html.BeginForm("Index", "LogIn", FormMethod.Post))
-    {
-        <div class="NerdLog">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="form-group-local">
-                            <input type="text" class="form-control-local txt-color" id="username" name="Username">
-                            <label for="username" class="form-label-local">Username</label>
-                            @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+    <div class="NerdLog">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="LogInDiv">
+                    @using (Html.BeginForm("Index", "LogIn", FormMethod.Post))
+                    {
+                        <div class="col-md-6">
+                            <div class="form-group-local">
+                                <input type="text" class="form-control-local txt-color" id="username" name="Username">
+                                <label for="username" class="form-label-local">Username</label>
+                                @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+                            </div>
+                            <br />
+                            <div class="form-group-local">
+                                <input type="password" class="form-control-local txt-color" id="password" name="Password">
+                                <label for="password" class="form-label-local">Password</label>
+                                @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                            </div>
+                            <br />
+                            <button type="submit" class="bn5 alRight">Log In</button>
                         </div>
-                        <br />
-                        <div class="form-group-local">
-                            <input type="password" class="form-control-local txt-color" id="password" name="Password">
-                            <label for="password" class="form-label-local">Password</label>
-                            @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                    }
+                </div>
+                <div class="registerMe">
+                    @using (Html.BeginForm("Register", "LogIn", FormMethod.Post))
+                    {
+                        <div class="flex-container-top">
+                            <div class="flex-items-top form-group-local">
+                                <input type="text" class="form-control-local txt-color" id="username" name="Username">
+                                <label for="Username" class="form-label-local">Username</label>
+                                @Html.ValidationMessageFor(x => x.Username, "", new { style = "color:#889b64;" })
+                            </div>
+                            <div class="flex-items-top form-group-local">
+                                <input type="text" class="form-control-local txt-color" id="username" name="MobileNumber">
+                                <label for="MobileNumber" class="form-label-local">Mobile Number</label>
+                                @Html.ValidationMessageFor(x => x.MobileNumber, "", new { style = "color:#889b64;" })
+                            </div>
                         </div>
-                        <br />
-                        <button type="submit" class="bn5 alRight">Log In</button>
-                    </div>
+                        <div class="flex-container-bottom">
+                            <div class="flex-items-bottom form-group-local">
+                                <input type="email" class="form-control-local txt-color" id="email" name="Email">
+                                <label for="Email" class="form-label-local">E-mail</label>
+                                @Html.ValidationMessageFor(x => x.Email, "", new { style = "color:#889b64;" })
+                            </div>
+                            <br />
+                            <div class="flex-items-bottom form-group-local">
+                                <input type="password" class="form-control-local txt-color" id="password" name="Password">
+                                <label for="password" class="form-label-local">Password</label>
+                                @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:#889b64;" })
+                            </div>
+                            <button type="submit" class="bn5 alRight">Register</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
-    }
+        <button type="button" class="regpop">Register</button>
+        <button type="button" class="back2login">LogIn</button>
+        <a href="@Url.Action("ForgotPassword","LogIn")">Forgot Password?</a>
+    </div>
 </div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //toastr.success('Action successfully changed....', 'ActionName');
+            //toastr.error('Action failed changed....', 'ActionName');
+            //toastr.warning('Action warning changed....', 'ActionName');
+            //toastr.info('Action info changed....', 'ActionName');
+            $('.registerMe').hide();
+            $('.back2login').hide();            
+            console.log("Hello Hidden!");
+        });
+        $('.regpop').click(function () {
+            $('.LogInDiv').hide();
+            $('.registerMe').show();
+            $('.back2login').show();
+            $('.regpop').hide();
+        });
+        $('.back2login').click(function () {
+            $('.LogInDiv').show();
+            $('.registerMe').hide();
+            $('.back2login').hide();
+            $('.regpop').show();
+        });
+    </script>
+}

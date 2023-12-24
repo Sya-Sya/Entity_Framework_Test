@@ -194,15 +194,15 @@ body {
     color: white;
 }
 
-.overlay-text-bottom {
+/*.overlay-text-bottom {
     position: absolute;
     bottom: -445px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    z-index: 1; /* Place the overlay text in front of the image */
-    color: #4d4020 !important;
-}
+    z-index: 1;*/ /* Place the overlay text in front of the image */
+    /*color: #4d4020 !important;
+}*/
 
 /* END OF GALLERY GROUP */
 
@@ -221,3 +221,59 @@ body {
     }
 
 /* END OF NerdLog GROUP */
+
+/*Flex Register*/
+
+.flex-container-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.flex-items-top:nth-child(1) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.flex-items-top:nth-child(2) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.flex-container-bottom {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.flex-items-bottom:nth-child(1) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: center;
+    order: 0;
+}
+
+.flex-items-bottom:nth-child(2) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: center;
+    order: 0;
+}
